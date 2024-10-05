@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Animated Search Page</title>
+    <link rel="stylesheet" href="Search.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 3D Animated Planet -->
+        <div class="animated-planet"></div>
+
+        <!-- Centered Search Bar -->
+        <div class="search-container">
+            <h1 class="main-title">Explore the Universe</h1>
+            <input type="text" class="search-bar" placeholder="Search for planets, asteroids, comets...">
+            
+            
+        </div>
+    </div>
+
+    <!-- JS CODE bhai -->
+    <script>
+        const searchBar = document.querySelector('.search-bar');
+        searchBar.addEventListener('focus', function() {
+            searchBar.style.boxShadow = '0 0 15px #1e90ff';
+        });
+        searchBar.addEventListener('blur', function() {
+            searchBar.style.boxShadow = 'none';
+        });
+    </script>
+</body>
+</html>

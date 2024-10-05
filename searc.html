@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Popup Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    #openPopup {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 30px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    #openPopup i {
+      color: #333;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 400px;
+      height: 60vh; 
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 101;
+    }
+    .popup iframe {
+      margin-top: 30px;
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow-y: auto; 
+    }
+    .popup .close-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 16px;
+      z-index: 102;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 50;
+    }
+  </style>
+</head>
+<body>
+  <button id="openPopup">
+    <i> 🔍 Search </i>
+  </button>
+  <div class="overlay" id="overlay"></div>
+  <div class="popup" id="popup">
+    <button class="close-btn" id="closePopup">X</button>
+    <iframe src="https://me.yuvrajsingh.tech/resources/info.html" scrolling="yes"></iframe> 
+  </div>
+
+  <script>
+    const openPopupBtn = document.getElementById('openPopup');
+    const closePopupBtn = document.getElementById('closePopup');
+    const popup = document.getElementById('popup');
+    const overlay = document.getElementById('overlay');
+    openPopupBtn.addEventListener('click', () => {
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+    closePopupBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+    overlay.addEventListener('click', () => {
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>

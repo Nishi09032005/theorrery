@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+}
+
+/* 3D Planet Animation */
+.animated-planet {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url('planet.png') no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    animation: rotate 30s infinite linear;
+    z-index: 1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Main title */
+.main-title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+/* Search Bar Styling */
+.search-container {
+    z-index: 2;
+    position: relative;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    outline: none;
+    background-color: #222;
+    color: #fff;
+    box-shadow: 0 0 10px #444;
+    transition: all 0.3s ease;
+}
+
+.search-bar::placeholder {
+    color: #aaa;
+}
+
+.search-bar:focus {
+    box-shadow: 0 0 15px #1e90ff;
+    background-color: #333;
+}
+
+/* Background Stars Animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('stars.png') repeat;
+    animation: stars 60s linear infinite;
+}
+
+@keyframes stars {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 10000px 10000px;
+    }
+}
