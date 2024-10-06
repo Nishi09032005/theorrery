@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solar System Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+        overflow: hidden;
+      }
+      button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+      mybutton {
+        padding: 20px 40px;
+        font-size: 24px;
+        cursor: pointer;
+        background: linear-gradient(135deg, #ff4081, #ff1e1e);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 6px 20px rgba(255, 64, 129, 0.5);
+        transition: all 0.3s ease;
+        margin: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        outline: none;
+      }
+
+      button:hover {
+        background: linear-gradient(135deg, #ff1e1e, #d5006d);
+        box-shadow: 0 10px 30px rgba(255, 64, 129, 0.7);
+        transform: translateY(-4px);
+      }
+
+      button:active {
+        transform: translateY(2px);
+        box-shadow: 0 6px 20px rgba(255, 64, 129, 0.5);
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: black;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 300px;
+        border-radius: 5px;
+        position: relative;
+      }
+
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .restart {
+        color: #aaa;
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus,
+      .restart:hover,
+      .restart:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <button onclick="window.location.href='game.html'" id="openGameButton">Play Game</button>
+    <button id="openPopupButton">Quick Quiz</button>
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="container">
+          <h1>Solar System Quiz</h1>
+          <div id="level-selection">
+            <h2>Select Difficulty Level</h2>
+            <button onclick="startQuiz('easy')">Easy</button>
+            <button onclick="startQuiz('medium')">Medium</button>
+            <button onclick="startQuiz('hard')">Hard</button>
+          </div>
+          <div id="quiz" class="hidden">
+            <h2 id="question"></h2>
+            <div id="options"></div>
+            <button id="next" class="hidden" onclick="loadQuestion()">
+              Next Question
+            </button>
+            <p id="explanation" class="hidden"></p>
+          </div>
+          <div id="result" class="hidden">
+            <h2>Your Score: <span id="score"></span></h2>
+            <button onclick="restartQuiz()">Restart Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("openPopupButton").onclick = function () {
+        document.getElementById("myModal").style.display = "block";
+      };
+      document.getElementById("restart").onclick = function () {
+        closeModal();
+        document.getElementById("myModal").style.display = "block";
+      };
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          closeModal();
+        }
+      };
+    </script>
+    <script src="quiz.js"></script>
+    <script>
+      particlesJS("particles-js", {
+        particles: {
+          number: {
+            value: 300,
+            density: {
+              enable: true,
+              value_area: 800,
+            },
+          },
+          color: {
+            value: "#ffffff",
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#000000",
+            },
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+          },
+          size: {
+            value: 3,
+            random: true,
+          },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+          },
+          move: {
+            enable: true,
+            speed: 6,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
+            onclick: {
+              enable: true,
+              mode: "push",
+            },
+          },
+        },
+        retina_detect: true,
+      });
+    </script>
+  </body>
+</html>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-   
+    background: #000;
     font-family: Arial, sans-serif; 
     margin: 0;
     text-align: left;
@@ -61,14 +61,25 @@ a:hover{
     background-size: cover;
    
 }
-.card-container{
+/* .card-container{
    display: flex;
     flex-wrap: wrap;
    justify-content: center;
    gap: 30px;
    margin: 20px;
    padding-bottom: 20px;
+} */
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+    padding-bottom: 20px;
 }
+
+
 .card{
     width: 300px;
     overflow: hidden;
@@ -94,10 +105,133 @@ h1{
 }
 .card-text p {
     margin: 10px 0;
-    color: #666;
+    color: #0b0b0b;
+    font-weight: 100;
 }
 
+/* footer */
 
-
-
-
+/* General Footer Styling */
+.footer {
+    background-color: #090909; /* Dark gray background */
+    color: #e0e0e0; /* Light gray text */
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+    height: 500px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+    padding-bottom: 60px;  /* Adds extra height from the top */
+  }
+  
+  
+  .footer h3 {
+    color: #094871; /* Blue color for headings */
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  .footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin: 10px 0;
+  }
+  
+  .footer ul li a {
+    color: #e0e0e0; /* Light gray text for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer ul li a:hover {
+    color: #3498db; /* Blue hover effect for links */
+  }
+  
+  /* Newsletter Form Styling */
+  .footer-newsletter {
+    max-width: 300px;
+  }
+  
+  .footer-newsletter p {
+    color: #cccccc;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .newsletter-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: #181717;
+    color: #ffffff;
+  }
+  
+  .newsletter-form button {
+    padding: 10px;
+    background-color: #094871;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #094871;
+  }
+  
+  /* Social Icons */
+  .footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icon {
+    color: #e0e0e0;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #094871; /* Blue hover effect for social icons */
+  }
+  
+  /* Contact Info */
+  .footer-contact p {
+    margin: 5px 0;
+    color: #cccccc;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444444;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .footer-bottom a {
+    color: #094871;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-bottom a:hover {
+    color: #094871; /* Darker blue on hover */
+  }
