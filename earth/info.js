@@ -77,5 +77,3 @@ document.addEventListener("DOMContentLoaded",()=>{
     cardContainer.append(card);
    }) 
 })
-
-
